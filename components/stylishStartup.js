@@ -221,7 +221,8 @@ function getUserStyleWrapper(s) {
 		},
 
 		get applyBackgroundUpdates() {
-			return parseInt(this.style.applyBackgroundUpdates);
+			return prefService.getBoolPref("extensions.stylish.updatesEnabled") ?
+			parseInt(this.style.applyBackgroundUpdates) : 0;
 		},
 
 		set applyBackgroundUpdates(abu) {
